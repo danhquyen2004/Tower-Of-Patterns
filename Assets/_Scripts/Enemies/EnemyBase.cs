@@ -88,7 +88,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void DetectAndTargetTower()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRange, LayerMask.GetMask("Tower"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange, LayerMask.GetMask("Tower"));
         float minDist = float.MaxValue;
         Transform nearestTower = null;
 

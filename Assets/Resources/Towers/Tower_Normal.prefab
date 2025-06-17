@@ -119,8 +119,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372068623944406659}
-  - component: {fileID: 7218290845080636983}
   - component: {fileID: 5600347002487252119}
+  - component: {fileID: 3933910988551338664}
   m_Layer: 2
   m_Name: Tower_Normal
   m_TagString: Untagged
@@ -144,22 +144,6 @@ Transform:
   - {fileID: 8306539520976099282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7218290845080636983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2460059421325269388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38f8f4b6f287474f80b7e300f6b587f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  fireRate: 1
-  damage: 10
-  level: 1
 --- !u!61 &5600347002487252119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -206,6 +190,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3636675, y: 1.1439078}
   m_EdgeRadius: 0
+--- !u!114 &3933910988551338664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460059421325269388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2bd450f1858154faecef0c2899562b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  fireRate: 1
+  damage: 10
+  level: 1
+  sprite: {fileID: 0}
 --- !u!1 &7499472748205189119
 GameObject:
   m_ObjectHideFlags: 0

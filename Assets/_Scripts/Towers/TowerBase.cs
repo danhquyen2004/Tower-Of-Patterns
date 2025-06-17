@@ -35,7 +35,7 @@ public class TowerBase : MonoBehaviour
     private EnemyBase FindTarget()
     {
         // Dummy target logic — sau này quét enemy trong tầm
-        Collider[] hits = Physics.OverlapSphere(transform.position, range);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
         foreach (var hit in hits)
         {
             EnemyBase enemy = hit.GetComponent<EnemyBase>();
