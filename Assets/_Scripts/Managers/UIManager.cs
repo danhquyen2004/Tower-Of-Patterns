@@ -1,25 +1,160 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
     public static UIManager Instance { get; private set; }
 
-    private void Awake() {
+    public GameObject popupUI;
+    public RectTransform popupRect;
+    private TowerSpot currentSpot;
+    private bool skipNextClick = false;
+
+
+    public GameObject buildTypePopup;  // popup chọn loại tháp
+    public RectTransform buildTypePopupRect;
+
+    private void Awake()
+    {
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
+
+        PopupBuildTypeStart();
     }
 
-    public void UpdateGold(int gold) {
-        Debug.Log($"UI update gold: {gold}");
-        // Cập nhật text UI thật sự ở đây
+    private void Update()
+    {
+        if (popupUI.activeSelf && currentSpot != null)
+        {
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(currentSpot.transform.position);
+            popupRect.position = screenPos + new Vector3(0, 50f, 0);
+        }
+
+        if (popupUI.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            if (skipNextClick)
+            {
+                skipNextClick = false;
+                return;
+            }
+
+            if (!RectTransformUtility.RectangleContainsScreenPoint(popupRect, Input.mousePosition))
+            {
+                HidePopup();
+            }
+        }
+
+        if (buildTypePopup.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            if (!RectTransformUtility.RectangleContainsScreenPoint(buildTypePopupRect, Input.mousePosition))
+            {
+                buildTypePopup.SetActive(false);
+                HidePopup();
+            }
+        }
     }
 
-    public void UpdateBaseHealth(int health) {
-        Debug.Log($"UI update base health: {health}");
-        // Update UI
+
+    public void HidePopup()
+    {
+        popupUI.SetActive(false);
+        buildTypePopup.SetActive(false);
+        currentSpot = null;
     }
 
-    public void UpdateWave(int wave) {
-        Debug.Log($"UI update wave: {wave}");
-        // Update wave text
+    #region Actions Menu
+    public void ShowPopup(TowerSpot spot)
+    {
+        HidePopup();
+        currentSpot = spot;
+        popupUI.SetActive(true);
+        skipNextClick = true;
+
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(spot.transform.position);
+        popupRect.position = screenPos + new Vector3(0, 50f, 0);
+
+        Button buildButton = popupUI.transform.Find("BuildButton").GetComponent<Button>();
+        Button upgradeButton = popupUI.transform.Find("UpgradeButton").GetComponent<Button>();
+        Button destroyButton = popupUI.transform.Find("DestroyButton").GetComponent<Button>();
+        buildButton.gameObject.SetActive(!spot.isOccupied);
+        upgradeButton.gameObject.SetActive(spot.isOccupied);
+        destroyButton.gameObject.SetActive(spot.isOccupied);
+
+        buildButton.onClick.RemoveAllListeners();
+        upgradeButton.onClick.RemoveAllListeners();
+        destroyButton.onClick.RemoveAllListeners();
+
+        buildButton.onClick.AddListener(OnBuildClicked);
+        upgradeButton.onClick.AddListener(OnUpgradeClicked);
+        destroyButton.onClick.AddListener(OnDestroyClicked);
+
     }
+    private void OnBuildClicked()
+    {
+        buildTypePopup.SetActive(true);
+
+        // Hiện popup tại cùng vị trí popupUI
+        buildTypePopupRect.position = popupRect.position;
+
+        // Ẩn popup gốc nếu muốn
+        popupUI.SetActive(false);
+    }
+    private void OnUpgradeClicked()
+    {
+        currentSpot.UpgradeTower();
+        HidePopup();
+    }
+
+    private void OnDestroyClicked()
+    {
+        currentSpot.DestroyTower();
+        HidePopup();
+    }
+    #endregion
+
+    #region Type Of Tower
+
+    private void PopupBuildTypeStart()
+    {
+        GameObject button = Resources.Load<GameObject>("UI/ButtonTowerType");
+        TowerBase[] towers = Resources.LoadAll<TowerBase>("Towers");
+        foreach (var tower in towers)
+        {
+            GameObject newButton = Instantiate(button, buildTypePopupRect);
+            newButton.name = tower.name; // Set name to match tower type
+            newButton.GetComponentInChildren<TextMeshProUGUI>().text = tower.name; // Assuming button has a Text component for display
+            newButton.GetComponentInChildren<Image>().sprite = tower.sprite; // Assuming TowerBase has a sprite field
+            // Add listener for button click
+            Button btnComponent = newButton.GetComponent<Button>();
+            btnComponent.onClick.AddListener(() => OnSelectTowerType(tower.name));
+        }
+    }
+    public void ShowPopupBuildType()
+    {
+        HidePopup();
+        buildTypePopup.SetActive(true);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(currentSpot.transform.position);
+        buildTypePopupRect.position = screenPos + new Vector3(0, 50f, 0);
+
+        // Clear previous listeners
+        foreach (Transform child in buildTypePopupRect)
+        {
+            Button button = child.GetComponent<Button>();
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+                string towerType = child.name; // Assuming button name matches tower type
+                button.onClick.AddListener(() => OnSelectTowerType(towerType));
+            }
+        }
+    }
+    private void OnSelectTowerType(string towerType)
+    {
+        currentSpot.BuildTower(towerType);
+        buildTypePopup.SetActive(false);
+        HidePopup();
+    }
+
+    #endregion
 }

@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
     }
-    private void Start()
-    {
-        GoldManager.Instance.OnGoldChanged += UIManager.Instance.UpdateGold;
-        WaveManager.Instance.OnWaveStarted += UIManager.Instance.UpdateWave;
-    }
     public void TakeBaseDamage(int amount)
     {
         baseHealth -= amount;

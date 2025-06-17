@@ -2,15 +2,36 @@ using UnityEngine;
 
 public class TowerSpot : MonoBehaviour
 {
-    public bool IsOccupied { get; private set; }
+    public bool isOccupied = false;
+    public TowerBase currentTower;
 
     private void OnMouseDown()
     {
-        if (!IsOccupied)
+        UIManager.Instance.ShowPopup(this);
+    }
+
+    public void BuildTower(string type)
+    {
+        if (isOccupied) return;
+        GameObject obj = TowerFactory.CreateTower(type, transform.position, transform);
+        currentTower = obj.GetComponent<TowerBase>();
+        isOccupied = true;
+        GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void UpgradeTower()
+    {
+        if (currentTower != null) currentTower.Upgrade();
+    }
+
+    public void DestroyTower()
+    {
+        if (currentTower != null)
         {
-            // Ví dụ hardcode type để test
-            TowerFactory.CreateTower("Tower_Normal", transform.position, transform);
-            IsOccupied = true;
+            Destroy(currentTower.gameObject);
+            currentTower = null;
+            isOccupied = false;
+            GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

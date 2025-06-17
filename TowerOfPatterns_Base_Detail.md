@@ -50,7 +50,7 @@ _Audio/                Âm thanh
 - `MeleeAttackStrategy.cs`, `RangedAttackStrategy.cs`: Attack mẫu
 - `EnemyFactory.cs`: Tạo enemy  
 **Pattern:** Strategy, Factory Method  
-**Lưu ý:** State hiện dùng enum + switch, chưa phải State Pattern
+**Lưu ý:** State hiện dùng enum + switch, chưa phải State Pattern, có thể tìm hiểu và chuyển qua state pattern
 
 ---
 
