@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TowerBase : MonoBehaviour
@@ -7,9 +8,11 @@ public class TowerBase : MonoBehaviour
     public float fireRate = 1f;
     private float fireCooldown = 0f;
 
+    public float speed = 4f;
     public float damage = 10f; // Sát thương cơ bản
     public int level = 1;
     public Sprite sprite;
+
     private void Update()
     {
         fireCooldown -= Time.deltaTime;
@@ -35,14 +38,10 @@ public class TowerBase : MonoBehaviour
     private EnemyBase FindTarget()
     {
         // Dummy target logic — sau này quét enemy trong tầm
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
-        foreach (var hit in hits)
-        {
-            EnemyBase enemy = hit.GetComponent<EnemyBase>();
-            if (enemy != null)
-            {
-                return enemy;
-            }
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, range);
+        EnemyBase enemy = hit.GetComponent<EnemyBase>();
+        if (enemy != null) { 
+            return enemy;
         }
         return null;
     }

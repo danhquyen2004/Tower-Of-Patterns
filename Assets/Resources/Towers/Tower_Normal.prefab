@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2bd450f1858154faecef0c2899562b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  archer: {fileID: 246471545168828480}
   range: 5
   fireRate: 1
   damage: 10

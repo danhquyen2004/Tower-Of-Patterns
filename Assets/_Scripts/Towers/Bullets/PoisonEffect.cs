@@ -1,21 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
-public class PoisonEffect : IBulletEffect {
-    private IBulletEffect next;
+public class PoisonEffect : BulletEffectDecorator {
+    private float duration = 5f;
+    private float interval = 1f;
 
-    public PoisonEffect(IBulletEffect next = null) {
-        this.next = next;
-    }
+    public PoisonEffect(IBulletEffect next = null) : base(next) { }
 
-    public void Apply(EnemyBase enemy) {
+    public override void Apply(EnemyBase enemy) {
         enemy.StartCoroutine(ApplyPoison(enemy));
-        next?.Apply(enemy);
+        base.Apply(enemy);
     }
 
     private IEnumerator ApplyPoison(EnemyBase enemy) {
-        float duration = 5f;
-        float interval = 1f;
         int ticks = Mathf.CeilToInt(duration / interval);
         for (int i = 0; i < ticks; i++) {
             if (enemy == null) yield break;
