@@ -13,6 +13,7 @@ public class EnemyBase : MonoBehaviour
     protected Transform baseTarget;
     protected Transform currentTowerTarget = null;
     public IEnemyAttackStrategy attackStrategy;
+    public bool isAttack = false; // Biến này có thể dùng để xác định xem enemy có đang tấn công hay không
 
 
     [SerializeField] protected List<Transform> pathWaypoints;
@@ -35,28 +36,31 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void OnUpdate()
     {
+        DetectAndTargetTower();
+
         if (currentTowerTarget != null)
         {
             MoveTowards(currentTowerTarget.position);
 
             if (Vector3.Distance(transform.position, currentTowerTarget.position) <= attackRange)
             {
-                AttackTower();
+                isAttack = true;
+                attackStrategy?.Attack(this);
+                //AttackTower(); // Tấn công tower
+                // Sau khi tấn công xong, đặt lại mục tiêu
+                currentTowerTarget = null;
+                isAttack = false; // Đặt lại trạng thái tấn công
             }
         }
         else
         {
-            DetectAndTargetTower();
-
-            if (currentTowerTarget == null)
-            {
                 FollowPath();
-            }
         }
     }
 
     protected virtual void MoveTowards(Vector3 targetPos)
     {
+        if (isAttack) return; // Nếu đang tấn công thì không di chuyển
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
     }
 
@@ -88,17 +92,21 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void DetectAndTargetTower()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRange, LayerMask.GetMask("Tower"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange);
         float minDist = float.MaxValue;
         Transform nearestTower = null;
 
         foreach (var hit in hits)
         {
-            float dist = Vector3.Distance(transform.position, hit.transform.position);
-            if (dist < minDist)
+            TowerBase tower = hit.GetComponent<TowerBase>();
+            if(tower != null)
             {
-                minDist = dist;
-                nearestTower = hit.transform;
+                float dist = Vector3.Distance(transform.position, hit.transform.position);
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    nearestTower = hit.transform;
+                }
             }
         }
 
@@ -110,7 +118,6 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void AttackTower()
     {
-        // Có thể gọi tower.TakeDamage nếu tower có máu
         Destroy(currentTowerTarget.gameObject);
         currentTowerTarget = null;
     }
@@ -148,5 +155,12 @@ public class EnemyBase : MonoBehaviour
             pathWaypoints.Add(child);
         }
     }
+
+    public Transform CurrentTowerTarget
+    {
+        get => currentTowerTarget;
+        set => currentTowerTarget = value;
+    }
+
 
 }

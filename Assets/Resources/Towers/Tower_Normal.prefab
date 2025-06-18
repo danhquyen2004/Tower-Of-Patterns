@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1883326125325332554}
   - component: {fileID: 2786537370799021556}
   - component: {fileID: 7929331091134801316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1372068623944406659}
   - component: {fileID: 7218290845080636983}
   - component: {fileID: 5600347002487252119}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Tower_Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   fireRate: 1
   damage: 10
   level: 1
+  sprite: {fileID: 0}
 --- !u!61 &5600347002487252119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8306539520976099282}
   - component: {fileID: 2173158319846704716}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
