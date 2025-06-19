@@ -8,11 +8,12 @@ public class EnemyBase : MonoBehaviour
     public float speed = 2f;
     public float detectionRange = 5f;
     public float attackRange = 1.5f;
+    public int attackDamage = 10;
     public int goldReward = 10;
     public IEnemyAttackStrategy attackStrategy;
 
     [HideInInspector] public bool isAttack = false;
-    [HideInInspector] public Transform CurrentTowerTarget;
+    public Transform CurrentTowerTarget;
     [HideInInspector] public Transform baseTarget;
     
     protected float currentHealth;

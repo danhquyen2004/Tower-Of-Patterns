@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/AstarPathfindingProject/Documentation/documentation.pdf.meta
 guid: 3b746da7b40c860c894ce656f273a7de
+========
+guid: e86ca83219221624d9ee7c4be28709ff
+folderAsset: yes
+>>>>>>>> c02ac09d60d99a6ce296b5477a3a08d8a9acaebc:Assets/Hun0FX.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

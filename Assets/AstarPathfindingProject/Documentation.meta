@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/AstarPathfindingProject/Documentation.meta
 guid: 2bd84edb620a9b51094b9d533b8d8020
+========
+guid: eb5fa8dbd0295d84ab198def67d0951e
+>>>>>>>> c02ac09d60d99a6ce296b5477a3a08d8a9acaebc:Assets/VFXPACK_FIRE_WALLCOEUR.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

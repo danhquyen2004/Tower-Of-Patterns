@@ -8,14 +8,12 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
 {
     public ParticleSystem burnParticlesPrefab;
     public float burnDuration = 3f;
-    public float burnDamagePerSecond = 10f;
     private float interval = 0.2f;
 
-    public BurnAttackStrategy(ParticleSystem burnParticlesPrefab, float burnDuration = 3f, float burnDamagePerSecond = 10f)
+    public BurnAttackStrategy(ParticleSystem burnParticlesPrefab, float burnDuration = 3f)
     {
         this.burnParticlesPrefab = burnParticlesPrefab;
         this.burnDuration = burnDuration;
-        this.burnDamagePerSecond = burnDamagePerSecond;
     }
 
     public void Attack(EnemyBase enemy)
@@ -55,7 +53,7 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
                     if (runner == null) runner = tower.GetComponent<MonoBehaviour>();
                     if (runner != null)
                     {
-                        runner.StartCoroutine(ApplyBurn(tower, effect));
+                        runner.StartCoroutine(ApplyBurn(tower, effect,enemy));
                     }
                     else
                     {
@@ -71,19 +69,19 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
         else
         {
             // Không có tower nào trong tầm → tấn công base
-            GameManager.Instance.TakeBaseDamage(5);
+            GameManager.Instance.TakeBaseDamage(enemy.attackDamage);
             Debug.Log($"{enemy.name} đốt base gây 5 damage");
         }
     }
 
     // Coroutine gây damage và xóa hiệu ứng cháy khi xong
-    private IEnumerator ApplyBurn(TowerBase tower, ParticleSystem burnEffect)
+    private IEnumerator ApplyBurn(TowerBase tower, ParticleSystem burnEffect , EnemyBase enemyBase)
     {
         float elapsed = 0f;
         while (elapsed < burnDuration && tower != null)
         {
-            float damageThisTick = burnDamagePerSecond * interval;
-            //tower.TakeDamage(damageThisTick);
+            float damageThisTick = enemyBase.attackDamage * interval;
+            tower.TakeDamage(damageThisTick);
             elapsed += interval;
             yield return new WaitForSeconds(interval);
         }
