@@ -59,7 +59,7 @@ public class TowerBase : MonoBehaviour, IGetHealthSystem
     public EnemyBase FindTarget()
     {
         // Dummy target logic — sau này quét enemy trong tầm
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("Enemy"));
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, range);
         EnemyBase enemy = hit.GetComponent<EnemyBase>();
         if (enemy != null) { 
             return enemy;
