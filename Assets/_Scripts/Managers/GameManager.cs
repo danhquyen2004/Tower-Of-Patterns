@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int baseHealth = 100;
+    public int baseHealth = 50;
 
     private void Awake()
     {
