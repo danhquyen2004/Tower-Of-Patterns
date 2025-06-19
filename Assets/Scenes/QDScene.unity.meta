@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/QDScene.unity.meta
 guid: 7ab22b5e7d7783d41b99b931bfd4b021
+========
+guid: 15ae66949003c524e83da321939522fe
+folderAsset: yes
+>>>>>>>> c02ac09d60d99a6ce296b5477a3a08d8a9acaebc:Assets/CodeMonkey.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

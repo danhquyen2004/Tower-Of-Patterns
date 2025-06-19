@@ -8,21 +8,15 @@ public class TowerFactory : MonoBehaviour
         if (prefab != null)
         {
             GameObject towerObj = Instantiate(prefab, position, Quaternion.identity, parent);
-            TowerBase tower = towerObj.GetComponent<TowerBase>();
-
-            switch (type)
+            TowerBase towerBase = towerObj.GetComponent<TowerBase>();
+            if (towerBase != null)
             {
-                case "Tower_Normal":
-                    tower.attackStrategy = new NormalAttackStrategy();
-                    break;
-                case "Tower_AoE":
-                    tower.attackStrategy = new AoEAttackStrategy();
-                    break;
-                default:
-                    Debug.LogWarning("Tower type not recognized");
-                    break;
+                towerBase.Initialize();
             }
-
+            else
+            {
+                Debug.LogError($"TowerBase component not found on {type} prefab.");
+            }
             return towerObj;
         }
         Debug.LogWarning("Tower prefab not found");
