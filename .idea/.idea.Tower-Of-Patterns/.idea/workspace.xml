@@ -6,64 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1be34b-92df-49c6-8da6-e87d2e0e8f2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Torch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Torch.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Renderer2D.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VFXPACK_FIRE_WALLCOEUR/Prefab/VFX_Fire.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/Factions/Goblins/Troops/Barrel/Blue/Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/Factions/Goblins/Troops/Barrel/Blue/Attack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_3Slides_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_3Slides_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_9Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_9Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_9Slides_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_9Slides_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Blue_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable_9Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Disable_9Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover_9Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Hover_9Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_3Slides_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_3Slides_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_9Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_9Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_9Slides_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_9Slides_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Buttons/Button_Red_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Pointers/02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Pointers/02.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Down.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Down_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Down_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Left.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Left_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Left_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Right.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Right_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Right_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Up.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Up_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Blue_Connection_Up_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Down.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Down_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Down_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Left.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Left_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Left_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Right.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Right_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Right_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Up.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Up_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Red_Connection_Up_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_3Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_3Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Down.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Down_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Down_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Left.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Left_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Left_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Right.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Right_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Right_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Up.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Up_Pressed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Ribbons/Ribbon_Yellow_Connection_Up_Pressed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/UITowerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/UITowerManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/WaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerSpot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/Bullets/ArrowBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/Bullets/ArrowBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2yjae2wziKneWMHr72TUGlxBELL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -89,7 +33,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Huuwx",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,15 +72,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17580">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17580" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />

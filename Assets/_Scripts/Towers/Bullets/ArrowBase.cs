@@ -23,7 +23,7 @@ public abstract class ArrowBase : MonoBehaviour {
             // Di chuyển mũi tên về phía mục tiêu
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, tower.speed * Time.deltaTime);
         } else {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
