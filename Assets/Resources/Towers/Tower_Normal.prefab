@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1883326125325332554}
   - component: {fileID: 2786537370799021556}
   - component: {fileID: 7929331091134801316}
+  - component: {fileID: 3382078984642950952}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -98,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 246471545168828480}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -5801322507957169421, guid: 97e5ecb8123c6fe4c9359227b0a2ce6a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 32724194df08c304ba280abbdb327e56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110,6 +111,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3382078984642950952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246471545168828480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc94cbae6daef44e98b876383dfee85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2460059421325269388
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,12 +215,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2bd450f1858154faecef0c2899562b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archer: {fileID: 246471545168828480}
   range: 5
   fireRate: 1
+  speed: 4
   damage: 10
   level: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 2173158319846704716}
+  archerController: {fileID: 3382078984642950952}
 --- !u!1 &7499472748205189119
 GameObject:
   m_ObjectHideFlags: 0
