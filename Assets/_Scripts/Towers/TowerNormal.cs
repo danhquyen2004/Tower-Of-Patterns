@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class TowerNormal : TowerBase
 {
-    private void Awake()
+    public override void Initialize()
     {
+        base.Initialize();
         attackStrategy = new NormalAttackStrategy();
     }
 }

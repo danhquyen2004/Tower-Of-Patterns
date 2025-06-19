@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class PoisonEffect : BulletEffectDecorator {
-    private float duration = 5f;
+    public float duration = 5f;
     private float interval = 1f;
 
     public PoisonEffect(IBulletEffect next = null) : base(next) { }

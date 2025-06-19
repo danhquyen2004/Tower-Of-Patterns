@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
+using CodeMonkey.HealthSystemCM;
 
-public class TowerBase : MonoBehaviour
+public class TowerBase : MonoBehaviour, IGetHealthSystem
 {
     public IAttackStrategy attackStrategy;
     public float maxHealth = 100f;
@@ -16,10 +17,15 @@ public class TowerBase : MonoBehaviour
     public SpriteRenderer sprite;
     
     public ArcherController archerController;
+    private TowerSpot towerSpot;
+    
+    private HealthSystem healthSystem;
 
-    private void Awake()
+    public virtual void Initialize()
     {
-        currentHealth = maxHealth;
+        towerSpot = GetComponentInParent<TowerSpot>();
+        healthSystem = new HealthSystem(maxHealth);
+        healthSystem.OnDead += HealthSystem_OnDead;
     }
 
     private void Update()
@@ -60,10 +66,27 @@ public class TowerBase : MonoBehaviour
         }
         return null;
     }
+    
+    public void TakeDamage(float damage)
+    {
+        healthSystem.Damage(damage);
+    }
+    
+    private void HealthSystem_OnDead(object sender, EventArgs e)
+    {
+        Debug.Log($"{name} đã chết");
+        // Xử lý khi tower chết, ví dụ: hủy đối tượng
+        towerSpot.DestroyTower();
+    }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 }

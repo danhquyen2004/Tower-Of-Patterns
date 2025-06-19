@@ -8,6 +8,15 @@ public class TowerFactory : MonoBehaviour
         if (prefab != null)
         {
             GameObject towerObj = Instantiate(prefab, position, Quaternion.identity, parent);
+            TowerBase towerBase = towerObj.GetComponent<TowerBase>();
+            if (towerBase != null)
+            {
+                towerBase.Initialize();
+            }
+            else
+            {
+                Debug.LogError($"TowerBase component not found on {type} prefab.");
+            }
             return towerObj;
         }
         Debug.LogWarning("Tower prefab not found");

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class TowerIce : TowerBase
 {
-    private void Awake()
+    public override void Initialize()
     {
+        base.Initialize();
         attackStrategy = new IceSlowAttackStrategy();
     }
 }

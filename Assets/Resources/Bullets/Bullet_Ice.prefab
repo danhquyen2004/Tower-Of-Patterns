@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3834305609764183708}
   - component: {fileID: 795608697128602524}
   - component: {fileID: -1716673369174579551}
-  - component: {fileID: 8601489508550936397}
+  - component: {fileID: 6511308766501255479}
   m_Layer: 0
   m_Name: Bullet_Ice
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.64, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &8601489508550936397
+--- !u!114 &6511308766501255479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f67f48f033a1142a9fc9f60182c429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 3806039598199004522, guid: bd1386d4ee3726342be61ab90aefa917, type: 3}

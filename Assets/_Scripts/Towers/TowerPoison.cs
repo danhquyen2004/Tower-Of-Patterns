@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class TowerPoison : TowerBase
 {
-    private void Awake()
+    public override void Initialize()
     {
+        base.Initialize();
         attackStrategy = new PoisonAttackStrategy();
     }
 }
