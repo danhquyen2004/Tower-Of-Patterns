@@ -7,7 +7,7 @@ public class TowerSpot : MonoBehaviour
 
     private void OnMouseDown()
     {
-        UIManager.Instance.ShowPopup(this);
+        UITowerManager.Instance.ShowPopup(this);
     }
 
     public void BuildTower(string type)

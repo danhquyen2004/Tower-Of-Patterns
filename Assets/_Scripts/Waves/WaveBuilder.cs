@@ -17,15 +17,12 @@ public class WaveBuilder {
 
         // Tính toán tỉ lệ
         int torchCount = Mathf.RoundToInt(baseCount * GetTorchRatio());
-        int tntCount = Mathf.RoundToInt(baseCount * GetTNTRatio());
-        int barrelCount = baseCount - torchCount - tntCount;
+        int barrelCount = baseCount - torchCount ;
 
         if (torchCount > 0)
-            wave.Add(new WaveSpawnInfo("Enemy_Torch", torchCount, spawnInterval));
-        if (tntCount > 0)
-            wave.Add(new WaveSpawnInfo("Enemy_TNT", tntCount, spawnInterval));
+            wave.Add(new WaveSpawnInfo("Torch", torchCount, spawnInterval));
         if (barrelCount > 0)
-            wave.Add(new WaveSpawnInfo("Enemy_Barrel", barrelCount, spawnInterval));
+            wave.Add(new WaveSpawnInfo("Barrel", barrelCount, spawnInterval));
 
         return wave;
     }
@@ -34,13 +31,6 @@ public class WaveBuilder {
         if (waveNumber < 3) return 1f;
         if (waveNumber < 10) return 0.7f;
         if (waveNumber < 20) return 0.5f;
-        return 0.4f;
-    }
-
-    private float GetTNTRatio() {
-        if (waveNumber < 5) return 0f;
-        if (waveNumber < 10) return 0.3f;
-        if (waveNumber < 20) return 0.4f;
         return 0.4f;
     }
 }

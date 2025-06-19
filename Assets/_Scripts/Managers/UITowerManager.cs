@@ -2,9 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UITowerManager : MonoBehaviour
 {
-    public static UIManager Instance { get; private set; }
+    public static UITowerManager Instance { get; private set; }
 
     public GameObject popupUI;
     public RectTransform popupRect;

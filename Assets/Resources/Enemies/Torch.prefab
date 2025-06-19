@@ -53,6 +53,7 @@ MonoBehaviour:
   speed: 2
   detectionRange: 2.24
   attackRange: 1
+  attackDamage: 10
   goldReward: 10
   isAttack: 0
   CurrentTowerTarget: {fileID: 0}
@@ -277,7 +278,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 11
   m_Sprite: {fileID: 8777388641641696378, guid: 1eb6e7ce28a8d5f48ac5115878068edc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
