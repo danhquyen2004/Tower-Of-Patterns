@@ -8,6 +8,7 @@ public class EnemyBase : MonoBehaviour
     public float speed = 2f;
     public float detectionRange = 5f;
     public float attackRange = 1.5f;
+    public int attackDamage = 10;
     public int goldReward = 10;
     public IEnemyAttackStrategy attackStrategy;
 
