@@ -7,7 +7,7 @@
     <list default="true" id="bb1be34b-92df-49c6-8da6-e87d2e0e8f2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/Bullets/ArrowBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/Bullets/ArrowBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemyBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemyBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

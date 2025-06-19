@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Pathfinding;
 using UnityEngine;
@@ -110,6 +111,16 @@ public class EnemyBase : MonoBehaviour
             return bottom;
         }
         return Vector3.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        CastleController castle = other.GetComponent<CastleController>();
+        if (castle != null)
+        {
+            castle.TakeDamage(attackDamage);
+            Destroy(gameObject);
+        }
     }
 
     #region Animation
