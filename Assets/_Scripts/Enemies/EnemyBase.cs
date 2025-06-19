@@ -1,105 +1,63 @@
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
+using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float speed = 2f;
-    public float detectionRange = 5f;  // phạm vi phát hiện tower
-    public float attackRange = 1f;     // phạm vi tấn công tower hoặc base
-    [SerializeField] protected Transform parentOfWaypoints; // Parent object chứa các waypoint
-    protected float currentHealth;
-    protected Transform baseTarget;
-    protected Transform currentTowerTarget = null;
+    public float detectionRange = 5f;
+    public float attackRange = 1.5f;
+    public int goldReward = 10;
     public IEnemyAttackStrategy attackStrategy;
-    public bool isAttack = false; // Biến này có thể dùng để xác định xem enemy có đang tấn công hay không
 
+    [HideInInspector] public bool isAttack = false;
+    [HideInInspector] public Transform CurrentTowerTarget;
+    [HideInInspector] public Transform baseTarget;
+    
+    protected float currentHealth;
+    protected IEnemyState currentState;
 
-    [SerializeField] protected List<Transform> pathWaypoints;
-    protected int currentPathIndex = 0;
-
-    protected virtual void Awake()
-    {
-        currentHealth = maxHealth;
-    }
-
+    // A* Pathfinding Project
+    private AIPath aiPath;
+    public AIPath AIPath => aiPath;
+    
+    private Animator animator;
+    public Animator Animator => animator;
+    
     protected virtual void Start()
     {
-        baseTarget = GameObject.FindWithTag("Base").transform;
+        baseTarget = GameObject.FindWithTag("Base")?.transform;
+        animator = GetComponentInChildren<Animator>();
+        aiPath = GetComponent<AIPath>();
+        aiPath.maxSpeed = speed;
+
+        // Đặt điểm đích ban đầu là base
+        if (baseTarget != null) aiPath.destination = baseTarget.position;
+        
+        currentHealth = maxHealth;
     }
 
     protected virtual void Update()
     {
-        OnUpdate();
+        currentState?.Update(this);
     }
 
-    protected virtual void OnUpdate()
+    public void ChangeState(IEnemyState newState)
     {
-        DetectAndTargetTower();
-
-        if (currentTowerTarget != null)
-        {
-            MoveTowards(currentTowerTarget.position);
-
-            if (Vector3.Distance(transform.position, currentTowerTarget.position) <= attackRange)
-            {
-                isAttack = true;
-                attackStrategy?.Attack(this);
-                //AttackTower(); // Tấn công tower
-                // Sau khi tấn công xong, đặt lại mục tiêu
-                currentTowerTarget = null;
-                isAttack = false; // Đặt lại trạng thái tấn công
-            }
-        }
-        else
-        {
-                FollowPath();
-        }
+        currentState?.Exit(this);
+        currentState = newState;
+        currentState?.Enter(this);
     }
 
-    protected virtual void MoveTowards(Vector3 targetPos)
+    public virtual void DetectAndTargetTower()
     {
-        if (isAttack) return; // Nếu đang tấn công thì không di chuyển
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-    }
-
-    protected virtual void FollowPath()
-    {
-        if (currentPathIndex < pathWaypoints.Count)
-        {
-            Transform waypoint = pathWaypoints[currentPathIndex];
-            MoveTowards(waypoint.position);
-
-            if (Vector3.Distance(transform.position, waypoint.position) <= 0.1f)
-            {
-                currentPathIndex++;
-            }
-        }
-        else
-        {
-            // Tới base
-            if (Vector3.Distance(transform.position, baseTarget.position) <= attackRange)
-            {
-                attackStrategy?.Attack(this);
-            }
-            else
-            {
-                MoveTowards(baseTarget.position);
-            }
-        }
-    }
-
-    protected virtual void DetectAndTargetTower()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectionRange,LayerMask.GetMask("Ignore Raycast"));
         float minDist = float.MaxValue;
         Transform nearestTower = null;
-
         foreach (var hit in hits)
         {
-            TowerBase tower = hit.GetComponent<TowerBase>();
-            if(tower != null)
+            if (hit.CompareTag("Tower"))
             {
                 float dist = Vector3.Distance(transform.position, hit.transform.position);
                 if (dist < minDist)
@@ -109,58 +67,80 @@ public class EnemyBase : MonoBehaviour
                 }
             }
         }
-
-        if (nearestTower != null)
-        {
-            currentTowerTarget = nearestTower;
-        }
+        CurrentTowerTarget = nearestTower;
     }
 
-    protected virtual void AttackTower()
+    // Gọi hàm này để đổi mục tiêu di chuyển
+    public void SetMoveTarget(Vector3 worldTarget)
     {
-        Destroy(currentTowerTarget.gameObject);
-        currentTowerTarget = null;
+        if (aiPath != null)
+            aiPath.destination = worldTarget;
+        
     }
 
-    public virtual void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Die();
+            ChangeState(new EnemyDieState());
         }
     }
 
     public virtual void Die()
     {
-        GoldManager.Instance.AddGold(10);
+        // Reward player, play effects, etc.
         Destroy(gameObject);
     }
+
     private void OnDrawGizmosSelected()
     {
-        // Vẽ detection range (màu vàng)
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
-
-        // Vẽ attack range (màu đỏ)
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
-    [Button]
-    private void LoadWaypoints()
+    public Vector3 GetTowerPosition()
     {
-        foreach (Transform child in parentOfWaypoints)
+        if (CurrentTowerTarget != null)
         {
-            pathWaypoints.Add(child);
+            BoxCollider2D col = CurrentTowerTarget.GetComponent<BoxCollider2D>();
+            Vector3 bottom = col.bounds.center + Vector3.down * (col.bounds.size.y / 2f);
+            return bottom;
         }
+        return Vector3.zero;
     }
 
-    public Transform CurrentTowerTarget
+    #region Animation
+
+    private Coroutine animationCoroutine;
+
+    /// <summary>
+    /// Chuyển đổi animation theo tên, đảm bảo animation cũ chạy hết mới chuyển qua animation mới.
+    /// </summary>
+    public void PlayAnimationAfterCurrent(string nextAnimName)
     {
-        get => currentTowerTarget;
-        set => currentTowerTarget = value;
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+        }
+        animationCoroutine = StartCoroutine(PlayAnimationAfterCurrentCoroutine(nextAnimName));
     }
 
+    private IEnumerator PlayAnimationAfterCurrentCoroutine(string nextAnimName)
+    {
+        // Lấy state hiện tại
+        AnimatorStateInfo currentState = Animator.GetCurrentAnimatorStateInfo(0);
+        float timeLeft = (1f - currentState.normalizedTime) * currentState.length;
 
+        // Nếu animation đang chạy, chờ cho nó chạy hết
+        if (timeLeft > 0f)
+        {
+            yield return new WaitForSeconds(timeLeft);
+        }
+
+        Animator.Play(nextAnimName, 0);
+    }
+
+    #endregion
 }
