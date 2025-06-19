@@ -83,7 +83,7 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
         while (elapsed < burnDuration && tower != null)
         {
             float damageThisTick = burnDamagePerSecond * interval;
-            //tower.TakeDamage(damageThisTick);
+            tower.TakeDamage(damageThisTick);
             elapsed += interval;
             yield return new WaitForSeconds(interval);
         }

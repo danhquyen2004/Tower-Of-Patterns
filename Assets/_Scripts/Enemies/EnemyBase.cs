@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour
     public IEnemyAttackStrategy attackStrategy;
 
     [HideInInspector] public bool isAttack = false;
-    [HideInInspector] public Transform CurrentTowerTarget;
+    public Transform CurrentTowerTarget;
     [HideInInspector] public Transform baseTarget;
     
     protected float currentHealth;
