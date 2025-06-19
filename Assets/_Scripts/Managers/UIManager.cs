@@ -12,12 +12,17 @@ public class UIManager : MonoBehaviour
     private bool skipNextClick = false;
 
 
-    public GameObject buildTypePopup;  // popup chọn loại tháp
+    public GameObject buildTypePopup; // popup chọn loại tháp
     public RectTransform buildTypePopupRect;
 
     private void Awake()
     {
-        if (Instance != null) { Destroy(gameObject); return; }
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
 
         PopupBuildTypeStart();
@@ -64,6 +69,7 @@ public class UIManager : MonoBehaviour
     }
 
     #region Actions Menu
+
     public void ShowPopup(TowerSpot spot)
     {
         HidePopup();
@@ -88,8 +94,8 @@ public class UIManager : MonoBehaviour
         buildButton.onClick.AddListener(OnBuildClicked);
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
         destroyButton.onClick.AddListener(OnDestroyClicked);
-
     }
+
     private void OnBuildClicked()
     {
         buildTypePopup.SetActive(true);
@@ -100,6 +106,7 @@ public class UIManager : MonoBehaviour
         // Ẩn popup gốc nếu muốn
         popupUI.SetActive(false);
     }
+
     private void OnUpgradeClicked()
     {
         currentSpot.UpgradeTower();
@@ -111,6 +118,7 @@ public class UIManager : MonoBehaviour
         currentSpot.DestroyTower();
         HidePopup();
     }
+
     #endregion
 
     #region Type Of Tower
@@ -124,12 +132,24 @@ public class UIManager : MonoBehaviour
             GameObject newButton = Instantiate(button, buildTypePopupRect);
             newButton.name = tower.name; // Set name to match tower type
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = tower.name; // Assuming button has a Text component for display
-            newButton.GetComponentInChildren<Image>().sprite = tower.sprite; // Assuming TowerBase has a sprite field
+
+            // Tìm GameObject con chứa Image trong newButton
+            Transform childImageTransform = newButton.transform.Find("Image");
+            if (childImageTransform != null)
+            {
+                Image childImage = childImageTransform.GetComponent<Image>();
+                if (childImage != null)
+                {
+                    childImage.sprite = tower.sprite.sprite;
+                }
+            }
+
             // Add listener for button click
             Button btnComponent = newButton.GetComponent<Button>();
             btnComponent.onClick.AddListener(() => OnSelectTowerType(tower.name));
         }
     }
+
     public void ShowPopupBuildType()
     {
         HidePopup();
@@ -149,6 +169,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
     private void OnSelectTowerType(string towerType)
     {
         currentSpot.BuildTower(towerType);
