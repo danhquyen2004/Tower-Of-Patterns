@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,11 @@ public class UITowerManager : MonoBehaviour
 
         Instance = this;
 
+        
+    }
+
+    private void Start()
+    {
         PopupBuildTypeStart();
     }
 
@@ -131,8 +137,18 @@ public class UITowerManager : MonoBehaviour
         {
             GameObject newButton = Instantiate(button, buildTypePopupRect);
             newButton.name = tower.name; // Set name to match tower type
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = tower.name; // Assuming button has a Text component for display
-
+            newButton.GetComponentInChildren<TextMeshProUGUI>().text = tower.price.ToString(); // Assuming button has a Text component for display
+            if(tower.price > GoldManager.Instance.Gold)
+            {
+                newButton.GetComponent<Image>().color = Color.gray;
+                newButton.GetComponent<Button>().interactable = false; // Disable button if not enough gold
+            }
+            else
+            {
+                newButton.GetComponent<Image>().color = Color.white;
+                newButton.GetComponent<Button>().interactable = true; // Enable button if enough gold
+            }
+            
             // Tìm GameObject con chứa Image trong newButton
             Transform childImageTransform = newButton.transform.Find("Image");
             if (childImageTransform != null)

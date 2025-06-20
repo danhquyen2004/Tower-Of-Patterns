@@ -15,6 +15,7 @@ public class TowerSpot : MonoBehaviour
         if (isOccupied) return;
         GameObject obj = TowerFactory.CreateTower(type, transform.position, transform);
         currentTower = obj.GetComponent<TowerBase>();
+        GoldManager.Instance.SpendGold(currentTower.price);
         isOccupied = true;
         GetComponent<SpriteRenderer>().enabled = false;
     }

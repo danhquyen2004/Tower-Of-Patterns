@@ -177,10 +177,11 @@ MonoBehaviour:
   detectionRange: 5
   attackRange: 0.66
   attackDamage: 10
-  goldReward: 10
+  goldReward: 15
   isAttack: 0
   CurrentTowerTarget: {fileID: 0}
   baseTarget: {fileID: 0}
+  dieEffect: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
 --- !u!61 &2979545484764360480
 BoxCollider2D:
   m_ObjectHideFlags: 0

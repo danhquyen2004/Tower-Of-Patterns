@@ -4,12 +4,17 @@ using System;
 public class GoldManager : MonoBehaviour {
     public static GoldManager Instance { get; private set; }
 
-    public int Gold { get; private set; } = 100;
+    public int Gold { get; private set; } = 200;
     public event Action<int> OnGoldChanged;
 
     private void Awake() {
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
+    }
+
+    private void Start()
+    {
+        ResetGold();
     }
 
     public void AddGold(int amount) {
@@ -27,5 +32,10 @@ public class GoldManager : MonoBehaviour {
         }
         Debug.Log("Not enough gold!");
         return false;
+    }
+    
+    public void ResetGold() {
+        Gold = 200;
+        OnGoldChanged?.Invoke(Gold);
     }
 }

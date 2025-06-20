@@ -66,12 +66,6 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
                 }
             }
         }
-        else
-        {
-            // Không có tower nào trong tầm → tấn công base
-            GameManager.Instance.TakeBaseDamage(enemy.attackDamage);
-            Debug.Log($"{enemy.name} đốt base gây 5 damage");
-        }
     }
 
     // Coroutine gây damage và xóa hiệu ứng cháy khi xong
@@ -92,7 +86,8 @@ public class BurnAttackStrategy : IEnemyAttackStrategy
             burnEffect.Stop();
             // Chờ hiệu ứng tắt hoàn toàn rồi xóa đối tượng
             yield return new WaitForSeconds(burnEffect.main.startLifetime.constantMax);
-            Object.Destroy(burnEffect.gameObject);
+            if (burnEffect != null)
+                Object.Destroy(burnEffect.gameObject);
         }
     }
 }

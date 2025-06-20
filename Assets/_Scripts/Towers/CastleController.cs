@@ -13,7 +13,11 @@ public class CastleController : MonoBehaviour, IGetHealthSystem
         healthSystem = new HealthSystem(maxHealth);
         healthSystem.OnDead += HealthSystem_OnDead;
     }
-    
+
+    public void Restart()
+    {
+        healthSystem.Heal(maxHealth);
+    }
     public void TakeDamage(float damage)
     {
         healthSystem.Damage(damage);
@@ -22,9 +26,7 @@ public class CastleController : MonoBehaviour, IGetHealthSystem
     
     private void HealthSystem_OnDead(object sender, EventArgs e)
     {
-        Debug.Log($"{name} đã chết");
-        // Xử lý khi tower chết, ví dụ: hủy đối tượng
-        Destroy(gameObject);
+        GameManager.Instance.GameOver();
     }
 
     public HealthSystem GetHealthSystem()

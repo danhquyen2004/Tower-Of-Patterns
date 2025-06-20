@@ -20,7 +20,7 @@ public class TowerBase : MonoBehaviour, IGetHealthSystem
     private TowerSpot towerSpot;
     
     private HealthSystem healthSystem;
-
+    public int price ;
     public virtual void Initialize()
     {
         towerSpot = GetComponentInParent<TowerSpot>();

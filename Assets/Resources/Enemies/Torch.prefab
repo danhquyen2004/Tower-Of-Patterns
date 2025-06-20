@@ -58,6 +58,7 @@ MonoBehaviour:
   isAttack: 0
   CurrentTowerTarget: {fileID: 0}
   baseTarget: {fileID: 0}
+  dieEffect: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
   burnEffect: {fileID: 1097031286348149302, guid: c2f6a8962aac3814aa56cb9647c93470, type: 3}
 --- !u!61 &4814748483083626401
 BoxCollider2D:

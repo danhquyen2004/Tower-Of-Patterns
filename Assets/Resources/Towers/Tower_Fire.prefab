@@ -225,6 +225,7 @@ MonoBehaviour:
   level: 1
   sprite: {fileID: 2173158319846704716}
   archerController: {fileID: 2656588020241677012}
+  price: 100
 --- !u!1 &7499472748205189119
 GameObject:
   m_ObjectHideFlags: 0

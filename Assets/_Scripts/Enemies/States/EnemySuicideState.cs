@@ -38,11 +38,7 @@ public class EnemySuicideState : IEnemyState
 
     public void Exit(EnemyBase enemy)
     {
-        if (explodeCoroutine != null)
-        {
-            enemy.StopCoroutine(explodeCoroutine);
-            explodeCoroutine = null;
-        }
+        
     }
 
     public bool HasExploded => hasExploded;
@@ -58,8 +54,7 @@ public class EnemySuicideState : IEnemyState
         // Đợi thêm một chút cho animation nổ hoàn thành
         yield return new WaitForSeconds(0.5f-time);
 
-        // Tự hủy enemy
-        Object.Destroy(enemy.gameObject);
+        enemy.Die();
 
         isDone = true;
     }

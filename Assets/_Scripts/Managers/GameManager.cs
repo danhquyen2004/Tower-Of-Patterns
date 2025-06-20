@@ -4,26 +4,32 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int baseHealth = 50;
-
+    public int score;
+    public GameOverUI gameOverPanel;
+    public CastleController castleController;
     private void Awake()
     {
         if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
-    }
-    public void TakeBaseDamage(int amount)
-    {
-        baseHealth -= amount;
-        Debug.Log($"Base damaged! Current health: {baseHealth}");
-        if (baseHealth <= 0)
-        {
-            GameOver();
-        }
+        score = 0;
     }
 
-    private void GameOver()
+    public void AddScore(int scoreToAdd)
     {
-        Debug.Log("Game Over!");
-        // Gọi UI, stop wave, v.v
+        score += scoreToAdd;
+    }
+
+    public void RestartGame()
+    {
+        castleController.Restart();
+        WaveManager.Instance.RestartGame();
+        GoldManager.Instance.ResetGold();
+        score = 0;
+    }
+
+    public void GameOver()
+    {
+        WaveManager.Instance.GameOver();
+        gameOverPanel.ShowGameOver(score);
     }
 }

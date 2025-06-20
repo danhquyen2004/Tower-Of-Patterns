@@ -20,17 +20,21 @@ public class WaveBuilder {
         int barrelCount = baseCount - torchCount ;
 
         if (torchCount > 0)
-            wave.Add(new WaveSpawnInfo("Torch", torchCount, spawnInterval));
+            wave.Add(new WaveSpawnInfo("Torch", torchCount, spawnInterval,GetSpawnDuration()));
         if (barrelCount > 0)
-            wave.Add(new WaveSpawnInfo("Barrel", barrelCount, spawnInterval));
+            wave.Add(new WaveSpawnInfo("Barrel", barrelCount, spawnInterval,GetSpawnDuration()));
 
         return wave;
     }
 
     private float GetTorchRatio() {
-        if (waveNumber < 3) return 1f;
-        if (waveNumber < 10) return 0.7f;
-        if (waveNumber < 20) return 0.5f;
+        if (waveNumber < 2) return 1f;
+        if (waveNumber < 4) return 0.5f;
         return 0.4f;
+    }
+    private float GetSpawnDuration() {
+        if (waveNumber < 2) return 20f;
+        if (waveNumber < 4) return 40f;
+        return 60f;
     }
 }

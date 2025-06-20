@@ -26,7 +26,8 @@ public class EnemyBase : MonoBehaviour
     
     private Animator animator;
     public Animator Animator => animator;
-    
+    [SerializeField] private ParticleSystem dieEffect;
+    public bool IsDead {get; private set;}
     protected virtual void Start()
     {
         baseTarget = GameObject.FindWithTag("Base")?.transform;
@@ -91,7 +92,13 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void Die()
     {
-        // Reward player, play effects, etc.
+        if (dieEffect != null)
+        {
+            Instantiate(dieEffect, transform.position, Quaternion.identity);
+        }
+        IsDead = true;
+        GameManager.Instance.AddScore(goldReward);
+        GoldManager.Instance.AddGold(goldReward);
         Destroy(gameObject);
     }
 
@@ -119,7 +126,7 @@ public class EnemyBase : MonoBehaviour
         if (castle != null)
         {
             castle.TakeDamage(attackDamage);
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -130,14 +137,6 @@ public class EnemyBase : MonoBehaviour
     /// <summary>
     /// Chuyển đổi animation theo tên, đảm bảo animation cũ chạy hết mới chuyển qua animation mới.
     /// </summary>
-    public void PlayAnimationAfterCurrent(string nextAnimName)
-    {
-        if (animationCoroutine != null)
-        {
-            StopCoroutine(animationCoroutine);
-        }
-        animationCoroutine = StartCoroutine(PlayAnimationAfterCurrentCoroutine(nextAnimName));
-    }
 
     private IEnumerator PlayAnimationAfterCurrentCoroutine(string nextAnimName)
     {
