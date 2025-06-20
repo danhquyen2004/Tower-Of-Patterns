@@ -5,14 +5,15 @@ using UnityEngine;
 public class GoldUI : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI goldText;
+
+
+    private void Start()
+    {
+        GoldManager.Instance.OnGoldChanged += UpdateGoldDisplay;
+    }
     
 
-    private void Update()
-    {
-        UpdateGoldDisplay();   
-    }
-
-    private void UpdateGoldDisplay()
+    private void UpdateGoldDisplay(int newGoldAmount)
     {
         goldText.text = GoldManager.Instance.Gold.ToString();
     }

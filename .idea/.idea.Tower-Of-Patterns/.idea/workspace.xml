@@ -6,39 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb1be34b-92df-49c6-8da6-e87d2e0e8f2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tower-Of-Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeMonkey/HealthSystem/Prefabs/pfHealthBarGreenUIWorldCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeMonkey/HealthSystem/Prefabs/pfHealthBarGreenUIWorldCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Barrel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Barrel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Torch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Torch.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Fire.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Ice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Ice.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Normal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Normal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Poison.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Towers/Tower_Poison.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ButtonTowerType.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/ButtonTowerType.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QDScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/Resources/Resources/G_Idle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/Resources/Resources/G_Idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Down.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Down.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Left.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Right.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Up.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Connection_Up.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Horizontal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Horizontal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Vertical.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Banner_Vertical.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_9Slides.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_9Slides.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_Regular.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Graphics/UI/Banners/Carved_Regular.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/BurnAttackStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/BurnAttackStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemyBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/EnemyBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/MeleeAttackStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/MeleeAttackStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/EnemySuicideState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Enemies/States/EnemySuicideState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/GoldManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/GoldManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/UITowerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/UITowerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Managers/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Managers/WaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/CastleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/CastleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Towers/TowerSpot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveSpawnInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Waves/WaveSpawnInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/UI/GoldUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/UI/GoldUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +103,7 @@
       <workItem from="1750350529104" duration="8612000" />
       <workItem from="1750389333910" duration="5000" />
       <workItem from="1750389360019" duration="4777000" />
-      <workItem from="1750394190851" duration="6653000" />
+      <workItem from="1750394190851" duration="8527000" />
     </task>
     <servers />
   </component>
